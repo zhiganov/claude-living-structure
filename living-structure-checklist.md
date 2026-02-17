@@ -11,7 +11,7 @@ Primary sources:
 Each item is scored: `[x]` present, `[~]` partial, `[ ]` missing, `[n/a]` not applicable.
 Properties can be audited independently via `--focus <property>`.
 
-**Key framing:** Alexander described these not just as properties to observe, but as *transformations* — active operations you apply repeatedly to generate living structure. Each property is both a diagnostic question ("does this code have it?") and a generative action ("apply this to improve it"). The audit scores current state; the transformation hints suggest where to go next.
+**Key framing:** Alexander described these not just as properties to observe, but as *transformations* — active operations you apply repeatedly to generate living structure. Each property is both a diagnostic question ("does this code have it?") and a generative action ("apply this to improve it"). The audit scores current state; the Growth Areas section suggests which transformations to apply next.
 
 ---
 
@@ -26,11 +26,9 @@ Centers exist at many sizes, with smooth transitions between adjacent levels.
 - [ ] **Small centers are present** — the smallest meaningful units (well-named variables, focused expressions) are given attention, not neglected
 - [ ] **Organizational levels of scale** — team structure has smooth gradations (individual → pair → team → department), not just "person" and "company"
 
-**Transformation:** Introduce new centers at intermediate scales. When a function is too large, don't just extract one helper — create a whole new level (a module, a class) that populates the gap between existing scales.
-
 ## 2. Strong Centers (`centers`)
 
-The system has clear cores — parts that everything else orbits and supports. Alexander called this the *master transformation*: it strengthens centers by calling on any combination of the other 14 properties. Every other transformation ultimately serves to make centers stronger.
+The system has clear cores — parts that everything else orbits and supports. This is the *master property*: it strengthens centers by calling on any combination of the other 14 properties.
 
 - [ ] **Identifiable core concept** — a new team member could be told "the first thing to know about this system is X" and X would orient them
 - [ ] **Domain model as center** — the core business logic/domain model is prominent, not buried under infrastructure
@@ -40,11 +38,9 @@ The system has clear cores — parts that everything else orbits and supports. A
 - [ ] **Centers at every scale** — not just one "core" for the whole system, but strong centers within each module, each class, each function
 - [ ] **Team has a center** — there is a clear point of contact, a lead or anchor who provides continuity and orientation
 
-**Transformation:** Pick the weakest center and strengthen it by applying other properties — give it better boundaries, add levels of scale within it, make it more symmetrical. This is the meta-operation: any property can be used in service of strengthening a center.
-
 ## 3. Boundaries (`boundaries`)
 
-Thick, well-defined boundaries protect centers and mediate between inside and outside. Alexander specified that boundaries should be *thick* — substantial enough to contain their own internal structure, roughly 25-50% the size of the center they protect.
+Thick, well-defined boundaries protect centers and mediate between inside and outside. Boundaries should be substantial enough to contain their own internal structure — roughly 25-50% the size of the center they protect.
 
 - [ ] **Parsing at the boundary** — inputs are validated and parsed into structured types at system edges, not deep inside business logic
 - [ ] **Serialization at the boundary** — output formatting (JSON, HTML, etc.) happens at the edges, not mixed into core logic
@@ -53,8 +49,6 @@ Thick, well-defined boundaries protect centers and mediate between inside and ou
 - [ ] **APIs as explicit boundaries** — interfaces between modules/services are explicitly defined, not accidentally coupled through shared internals
 - [ ] **Boundaries have their own centers** — boundary layers are well-organized internally (e.g., a validation layer has its own clear structure), not a dumping ground
 - [ ] **Team boundaries are clear** — responsibilities between roles (PM, design, engineering) have explicit boundaries with defined handoff points
-
-**Transformation:** Where a center is weak or contaminated by outside concerns, wrap it in a thicker boundary. Create a dedicated parsing/adapter layer that gives the center room to be purely itself.
 
 ## 4. Alternating Repetition (`alternation`)
 
@@ -66,11 +60,9 @@ Dual structures repeat and alternate throughout the system, each strengthening t
 - [ ] **Input and output cycles** — the system has clear rhythms of reading/writing, request/response, or gather/compute/emit
 - [ ] **Work-life rhythm** — development has a sustainable cadence with clear on/off boundaries, not constant crunch or constant drift
 
-**Transformation:** Find a neglected "background" structure (data types, test code, config) and bring it to the same level of quality as the foreground. The alternation between the two should make both stronger.
-
 ## 5. Positive Space (`positive`)
 
-Every part — foreground and background — is coherent and purposeful, not leftover scraps. Alexander emphasized that this transformation gives definite form to the "interstices" — the spaces *between* the obvious centers.
+Every part — foreground and background — is coherent and purposeful, not leftover scraps.
 
 - [ ] **Functions are self-contained** — each function makes sense in isolation, without needing to know its callers to understand it
 - [ ] **No idea fragments** — there are no functions that only make sense in the context of a single caller (negatively-shaped code)
@@ -79,8 +71,6 @@ Every part — foreground and background — is coherent and purposeful, not lef
 - [ ] **Consistent abstraction levels** — each center operates at a single level of abstraction (file I/O code doesn't mix with domain logic)
 - [ ] **Reusable by nature** — positively-shaped code feels like it could be part of the language or standard library
 - [ ] **Easy to test in isolation** — because centers are coherent, unit testing feels natural, not forced
-
-**Transformation:** Look at the "leftover" spaces — the glue code, the utility files, the middleware — and give them deliberate, recognizable form. Shape the background until it's as coherent as the foreground.
 
 ## 6. Good Shape (`shape`)
 
@@ -92,8 +82,6 @@ Centers are built from elementary, well-understood forms that compose beautifull
 - [ ] **Elegant composition** — chains of operations read naturally and do exactly what you'd expect
 - [ ] **Minimal machinery** — the solution accomplishes its goal with surprisingly little code, without feeling compressed or obscure
 
-**Transformation:** Take a rough outline of a solution and strengthen each piece — make types more distinct, names more precise, compositions more natural — until the overall shape becomes recognizable and memorable.
-
 ## 7. Local Symmetries (`symmetry`)
 
 Similar things look similar; differences are meaningful, not accidental.
@@ -103,8 +91,6 @@ Similar things look similar; differences are meaningful, not accidental.
 - [ ] **Meaningful asymmetry** — when code breaks symmetry, the reason is evident (adaptation to a genuine difference, not accidental inconsistency)
 - [ ] **Templates and conventions** — repeating patterns (route handlers, test cases, data transformations) follow a recognizable template
 - [ ] **Differences stand out** — because similar things look similar, the important differences are immediately visible
-
-**Transformation:** When facing complexity, look for hidden symmetries. Make similar things look similar so that important differences stand out. If a center already has a natural axis (e.g., request/response), make the symmetry explicit.
 
 ## 8. Deep Interlock and Ambiguity (`interlock`)
 
@@ -116,8 +102,6 @@ Centers hook into each other at their boundaries; hierarchy is flexible, not rig
 - [ ] **Cross-functional teams** — people belong to multiple organizational centers simultaneously (team + discipline + project)
 - [ ] **Composable building blocks** — components interlock through well-defined protocols, enabling flexible recombination
 
-**Transformation:** At hard interfaces between two modules, create a third center — a shared type, protocol, or adapter — that belongs ambiguously to both sides, linking them without merging them.
-
 ## 9. Contrast (`contrast`)
 
 Distinct parts are clearly differentiated; you can tell at a glance what type of thing you're looking at.
@@ -128,8 +112,6 @@ Distinct parts are clearly differentiated; you can tell at a glance what type of
 - [ ] **Roles are distinct** — team roles (PM, designer, engineer) have clearly different responsibilities that complement each other
 - [ ] **Read vs. write paths differ** — query and command paths are appropriately differentiated (when the domain warrants it)
 
-**Transformation:** Increase differentiation between regions that serve different purposes. Move scattered concerns (SQL mixed with HTML mixed with logic) into distinct, concentrated areas — like clearing stones from a field into walls.
-
 ## 10. Gradients (`gradients`)
 
 Controlled transitions replace sharp jumps; centers adapt to varying forces across space.
@@ -139,8 +121,6 @@ Controlled transitions replace sharp jumps; centers adapt to varying forces acro
 - [ ] **Test case gradient** — tests are arranged from happy path to edge cases to error cases, reflecting priority
 - [ ] **Complexity gradient** — the system gets progressively more detailed as you move from outer layers inward
 - [ ] **Project lifecycle gradient** — development naturally transitions through phases (research → design → build → stabilize) without sharp handoffs
-
-**Transformation:** Where there's a sharp boundary or jarring transition, introduce a gradient — a series of intermediate centers that vary gradually in size, complexity, or abstraction level, pointing toward or away from a center.
 
 ## 11. Roughness (`roughness`)
 
@@ -153,8 +133,6 @@ Precise adaptation to real forces, even when it means relaxing artificial rules.
 - [ ] **Context-sensitive decisions** — similar problems are solved differently when context warrants it, rather than forcing uniformity
 - [ ] **Imperfection is honest** — TODOs, rough edges, and known limitations are acknowledged rather than papered over with false elegance
 
-**Transformation:** Give the process *permission* to be rough where necessary. When strict adherence to a pattern, type system, or formatting rule conflicts with adaptation to real requirements, relax the rule in service of the larger whole.
-
 ## 12. Echoes (`echoes`)
 
 Recurring structural themes appear at different scales and in different parts of the system.
@@ -165,11 +143,9 @@ Recurring structural themes appear at different scales and in different parts of
 - [ ] **Team echoes code** — organizational structure echoes the software architecture (Conway's Law, consciously applied)
 - [ ] **Design vocabulary** — the team has shared language for recurring patterns, making design discussions efficient
 
-**Transformation:** Identify the dominant "angles and ratios" — the recurring idioms and structural proportions — and use them as defaults for new code. Give the system a family resemblance across its parts.
-
 ## 13. The Void (`void`)
 
-Quiet, empty spaces exist that allow life to bloom within them. Alexander noted that at the core of any serious center there should be "some undisturbed and perfectly peaceful area which lacks busyness or excessive structure." In a fractal, the largest component survives as the void — you cannot fill everything with detail.
+Quiet, empty spaces exist that allow life to bloom within them. At the core of any serious center there should be some undisturbed area which lacks busyness — you cannot fill everything with detail.
 
 - [ ] **Stable platforms** — the system builds on stable, slow-changing foundations (languages, frameworks, protocols) that create space for application-level innovation
 - [ ] **Breathing room in code** — blank lines, clear section breaks, and whitespace give the eye places to rest
@@ -177,8 +153,6 @@ Quiet, empty spaces exist that allow life to bloom within them. Alexander noted 
 - [ ] **Quiet-to-busy ratio** — the system has a healthy balance between stable/quiet code (frameworks, protocols, config) and dense/active code (features, business logic) — not everything is equally busy
 - [ ] **Slack in the schedule** — the development process has room for exploration, refactoring, and responding to the unexpected
 - [ ] **Empty extensibility** — the architecture has natural extension points that invite future growth without requiring it
-
-**Transformation:** In a region with too much busyness, create an open center — a stable, quiet abstraction that doesn't do much itself but provides a peaceful foundation for smaller, more active structures around it.
 
 ## 14. Simplicity and Inner Calm (`calm`)
 
@@ -191,11 +165,9 @@ The whole feels effortless, unhurried, and precisely adapted — complex but coh
 - [ ] **No contortions** — the code doesn't twist itself into knots to satisfy an abstraction or pattern that doesn't fit
 - [ ] **Effortless reading** — you can read the code from top to bottom and it tells a clear story, without jumping around
 
-**Transformation:** Simplify by subtraction. Question every piece of structure: does it belong here? Remove anything chaotic, superfluous, or distracting until what remains is exactly what's needed — complex but coherent, like Occam's razor applied to code.
-
 ## 15. Not-Separateness (`fit`)
 
-The system is deeply adapted to its context — users, tools, environment — and doesn't call attention to itself. Alexander described this as overcoming separation by forming "chains of centers which cross boundaries," creating softer, more permeable edges between the system and its environment.
+The system is deeply adapted to its context — users, tools, environment — and doesn't call attention to itself. Where boundaries are too sharp, chains of intermediate structures should cross them, creating softer, more permeable edges.
 
 - [ ] **Adapted to users' real workflows** — the system fits naturally into how people actually work, not how designers imagine they should work
 - [ ] **Adapted to developers' tools** — code conventions account for the editors, debuggers, and review tools the team actually uses
@@ -204,5 +176,3 @@ The system is deeply adapted to its context — users, tools, environment — an
 - [ ] **Incremental adaptation** — the system evolves through many small adjustments based on real feedback, not big redesigns from scratch
 - [ ] **Invisible when working well** — users don't notice the system when it's working; it feels like a natural extension of their workflow
 - [ ] **No showroom engineering** — design decisions optimize for long-term usability, not demo-day impressions or novelty
-
-**Transformation:** Where a boundary between the system and its environment is too sharp, build bridges — gradients of intermediate structures (SDKs, CLI wrappers, migration tools, compatibility layers) that soften the edge and create permeability in both directions.
