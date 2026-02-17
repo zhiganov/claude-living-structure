@@ -2,6 +2,8 @@
 
 A [Claude Code](https://claude.ai/code) slash command that audits software projects against Christopher Alexander's [15 Properties of Living Structure](https://en.wikipedia.org/wiki/The_Nature_of_Order).
 
+<img width="1024" height="768" alt="15 properties of living structures" src="https://github.com/user-attachments/assets/44c0cb2c-4c48-467b-876b-7f6af26c664e" />
+
 ## Why
 
 Alexander argued that the 15 properties aren't aesthetic preferences or cognitive artifacts — they're structural features of all living systems, rooted in the physics of matter itself. They show up in nature, in traditional architecture, and in any well-adapted complex system. Software is no exception: codebases that exhibit these properties feel alive, coherent, and easy to work with. Those that don't feel dead, fragile, or hostile.
