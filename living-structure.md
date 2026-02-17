@@ -95,11 +95,14 @@ in this specific project. Reference specific files, patterns, or architectural d
 2. {Second strongest property} — {why}
 3. {Third strongest} — {why}
 
-## Growth Areas
+## Growth Areas (Transformations to Apply)
 
-1. {Property with most room for improvement} — {concrete suggestion}
-2. {Second most impactful} — {concrete suggestion}
-3. {Third} — {concrete suggestion}
+Alexander described these properties not just as things to observe but as *active transformations*
+that generate life when applied. For each growth area, suggest a specific transformation:
+
+1. {Property with most room for improvement} — **Apply:** {specific transformation from the checklist, adapted to this project}
+2. {Second most impactful} — **Apply:** {specific transformation}
+3. {Third} — **Apply:** {specific transformation}
 
 ## Connections
 
